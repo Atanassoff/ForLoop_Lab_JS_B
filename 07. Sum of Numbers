@@ -1,8 +1,0 @@
-function demo(input){
-    let str = input[0];
-    let sum = 0;
-    for(i = 0; i < str.length; i++){
-        sum += Number(str[i]);
-    }
-    console.log(`The sum of the digits is:${sum}`);
-}

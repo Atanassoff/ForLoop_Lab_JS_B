@@ -1,10 +1,9 @@
 function arrayRotation(arr, num){
     for(let i = 1; i <= num; i++){
-        arr.push(arr[0]);
-        arr.splice(0, 1);
+        arr.push(arr.shift());
     }
     console.log(arr.join(' '));
-} 
+}
 
 arrayRotation([51, 47, 32, 61, 21], 2)
 //32 61 21 51 47

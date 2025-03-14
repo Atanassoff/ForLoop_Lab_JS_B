@@ -1,17 +1,18 @@
 function maxNumber(arr) {
     let newArr = [];
-    let currentArr = arr;
-    while (currentArr.length > 0) {
-        let max = Number.MIN_SAFE_INTEGER;
-        let maxIndex = -1;
-        for (let i = 0; i < currentArr.length; i++) {
-            if (currentArr[i] >= max) {
-                max = currentArr[i];
-                maxIndex = i;
+    for (let i = 0; i < arr.length; i++) {
+        let max = arr[i];
+        let top = true;
+        for (let j = i + 1; j < arr.length; j++) {
+            let currNum = arr[j];
+            if (max <= currNum) {
+                top = false;
+                break
             }
         }
-        newArr.push(max);
-        currentArr = currentArr.slice(maxIndex + 1, currentArr.length)
+        if (top) {
+            newArr.push(max);
+        }
     }
     console.log(newArr.join(' '));
 }
